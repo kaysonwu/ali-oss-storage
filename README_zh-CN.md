@@ -50,6 +50,19 @@
         $app->register(Junliuxian\AliOSS\AliOssServiceProvider::class);
         ```
 
+# Config
+name | type | description
+---|---|---
+access_id | string | Aliyun OSS AccessKeyId
+access_key | string | Aliyun OSS AccessKeySecret
+bucket | string | Aliyun OSS bucket name
+endpoint | string | Aliyun OSS 外网节点
+endpoint_internal | string | Aliyun OSS 内网节点
+prefix | string | 路径前缀
+domain | string | 自定义域名绑定 (CNAME)
+ssl | boolean | 启用或禁用 SSL
+debug | boolean | 是否开启调试模式
+
 # API
 
 ```

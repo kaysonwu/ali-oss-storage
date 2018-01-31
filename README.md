@@ -62,7 +62,7 @@ endpoint | string | Aliyun OSS extranet node or custom external domain name
 endpoint_internal | string | Aliyun OSS intranet node
 prefix | string | path prefix
 domain | string | Custom domain name binding
-ssl | boolean | Aliyun OSS intranet node
+ssl | boolean | enabled or disabled SSL
 debug | boolean | Whether to open Debug mode
 
 # API
