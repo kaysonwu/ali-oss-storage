@@ -18,9 +18,8 @@ class AliOssServiceProvider extends ServiceProvider
     {
         Storage::extend('oss', function($app, $config) {
 
-            $cname      = isset($config['domain']) ? $config['domain'] : '';
-            $endpoint   = $cname?:(isset($config['endpoint_internal'])?$config['endpoint_internal']:'');
-            $client     = new OssClient($config['access_id'], $config['access_key'], ($endpoint?:$config['endpoint']), (bool)($cname));
+            $endpoint   = $config['domain']??($config['endpoint_internal']??$config['endpoint']);
+            $client     = new OssClient($config['access_id'], $config['access_key'], $endpoint, (bool)($config['domain']??false));
 
             $adapter    = new AliOssAdapter($client, $config);
             $filesystem = new Filesystem($adapter);
